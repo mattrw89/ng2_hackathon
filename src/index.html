@@ -2,17 +2,36 @@
 <html>
 
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
   <script src="../../node_modules/systemjs/dist/system.src.js"></script>
   <script src="../../node_modules/angular2/bundles/angular2.dev.js"></script>
   <script src="../../node_modules/angular2/bundles/router.dev.js"></script>
   <script src="../node_modules/angular2/bundles/http.dev.js"></script>
+  <script src="https://rawgit.com/oauth-io/oauth-js/master/dist/oauth.js"></script>
   <script>
+
+  window.oauth = OAuth;
+
     System.config({
       packages: {'app': {defaultExtension: 'js'}}
     });
     System.import('app/bootstrap');
+
+    //         OAuth.initialize('MoejKc6sCMhBG38Sicb-qY8_2rs');
+    // OAuth.popup('github').done(function(result) {
+    //   console.log(result);
+      // do some stuff with result
+    // });
+
   </script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
 </head>
 
 <body>

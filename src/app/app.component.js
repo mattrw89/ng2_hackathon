@@ -18,10 +18,18 @@ var commits_component_1 = require('./commits.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
+    AppComponent.prototype.onInit = function () {
+        // console.log('OnInit');
+        //       window.oauth.initialize('MoejKc6sCMhBG38Sicb-qY8_2rs');
+        // window.oauth.popup('github').done(function(result: any) {
+        // 	console.log(result);
+        // 	// do some stuff with result
+        // });
+    };
     AppComponent = __decorate([
         angular2_1.Component({ selector: 'my-app' }),
         angular2_1.View({
-            template: "\n    <a [router-link]=\"['./Dashboard']\">Dashboard</a>\n    <a [router-link]=\"['./Characters']\">Characters</a>\n    <a [router-link]=\"['./Releases']\">Releases</a>\n    <a [router-link]=\"['./Commits']\">Commits</a>\n    <router-outlet></router-outlet>\n    ",
+            template: "\n<nav class=\"navbar navbar-default\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <a class=\"navbar-brand\" href=\"#\">WebSiteName</a>\n    </div>\n    <div>\n      <ul class=\"nav navbar-nav\">\n\t\t<li><a [router-link]=\"['./Dashboard']\">Dashboard</a></li>\n    \t<li><a [router-link]=\"['./Characters']\">Characters</a></li>\n    \t<li><a [router-link]=\"['./Releases']\">Releases</a></li>\n    \t<li><a [router-link]=\"['./Commits']\">Commits</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n    <router-outlet></router-outlet>\n    ",
             directives: [router_1.ROUTER_DIRECTIVES]
         }),
         router_1.RouteConfig([
