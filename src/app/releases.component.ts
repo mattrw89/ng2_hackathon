@@ -1,4 +1,6 @@
 import {Component, FORM_DIRECTIVES, View} from 'angular2/angular2';
+import {GithubHTTPTagsService} from './github.http.service';
+import {GithubTag} from './github_tag';
 
 @Component({ selector: 'releases' })
 @View({
@@ -11,6 +13,11 @@ import {Component, FORM_DIRECTIVES, View} from 'angular2/angular2';
 export class ReleasesComponent {
 	public name = 'john';
 	public message = '';
+	public tagsList: Array<GithubTag> = [];
+
+	constructor(private tagsService: GithubHTTPTagsService) {
+		this.getTags();
+	}
 
 	public data = [
 {
@@ -270,5 +277,14 @@ export class ReleasesComponent {
 
 	sayHello() {
 		this.message = 'Hello ' + this.name + '!';
+	}
+
+	getTags() {
+		this.tagsService.getTags()
+			.then(function(tagData) {
+				this.tagsList = tagData;
+				console.log('getTags returned');
+				console.log(tagData);
+			});
 	}
 }

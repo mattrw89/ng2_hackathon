@@ -16,8 +16,8 @@ export class GithubHTTPTagsService {
 		this.tags.length = 0;
 		let promise = this._http.get('https://api.github.com/repos/angular/angular/tags?access_token=c131f0b1df3d040bf0da7aa807b81f74ecac49ba&scope=public_repo&token_type=bearer')
 			.map((response: any) => response.json()).toPromise()
-			.then((characters: GithubTag[]) => {
-				this.tags.push(...characters);
+			.then((tags: GithubTag[]) => {
+				this.tags.push(...tags);
 				return this.tags;
 			})
 		// //TODO: fix catch

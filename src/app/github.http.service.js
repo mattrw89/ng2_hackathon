@@ -24,8 +24,8 @@ var GithubHTTPTagsService = (function () {
         this.tags.length = 0;
         var promise = this._http.get('https://api.github.com/repos/angular/angular/tags?access_token=c131f0b1df3d040bf0da7aa807b81f74ecac49ba&scope=public_repo&token_type=bearer')
             .map(function (response) { return response.json(); }).toPromise()
-            .then(function (characters) {
-            (_a = _this.tags).push.apply(_a, characters);
+            .then(function (tags) {
+            (_a = _this.tags).push.apply(_a, tags);
             return _this.tags;
             var _a;
         })
