@@ -21,7 +21,7 @@ var DashboardComponent = (function () {
     DashboardComponent = __decorate([
         angular2_1.Component({ selector: 'my-dashboard' }),
         angular2_1.View({
-            template: "\n\t\t<h2>Dashboard</h2>\n\t\t<div>Hello {{name}}</div>\n\t\t<input [(ng-model)]=\"name\" />\n\t\t<button (click)=\"sayHello()\">Say Hello</button>\n\t\t<p>{{message}}</p>\n\t",
+            template: "\n\t\t<h2>Welcome to the Neon Ninjas Demo</h2>\t\t\n\t",
             directives: [angular2_1.FORM_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
