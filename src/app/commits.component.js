@@ -2118,7 +2118,7 @@ var CommitsComponent = (function () {
     CommitsComponent = __decorate([
         angular2_1.Component({ selector: 'commits' }),
         angular2_1.View({
-            template: "\n\t\t<h2>Commits</h2>\t\n\t\t<ul>\n\t\t\t<li *ng-for=\"#commit of commits\">\n\t\t\t\t <a [href]=\"commit.author.html_url\"><img [src]=\"commit.author.avatar_url\" height=40 width=40></a> <a [href]=\"commit.html_url\">{{commit.commit.message}}</a>\n\t\t\t</li>\n\t\t</ul>\n\t\t\t\n\t",
+            template: "\n\t\t<h2>Commits</h2>\t\n\t\t<ul class=\"list-group\">\n\t\t\t<li class=\"list-group-item\" *ng-for=\"#commit of commits\">\n\t\t\t\t <a [href]=\"commit.author.html_url\"><img [src]=\"commit.author.avatar_url\" height=40 width=40></a> <a [href]=\"commit.html_url\">{{commit.commit.message}}</a>\n\t\t\t</li>\n\t\t</ul>\n\t\t\t\n\t",
             directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])

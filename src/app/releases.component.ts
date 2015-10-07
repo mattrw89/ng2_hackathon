@@ -6,8 +6,8 @@ import {Component, FORM_DIRECTIVES, View, CORE_DIRECTIVES, OnInit} from 'angular
 @View({
     template: `
         <h2>Releases</h2>
-        <ul>
-            <li *ng-for="#release of tagsList">
+        <ul class="list-group">
+            <li class="list-group-item" *ng-for="#release of tagsList">
                 <a href="{{release.commit.url}}"> {{release.name}}</a>
             </li>
         </ul>

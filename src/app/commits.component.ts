@@ -4,8 +4,8 @@ import {Component, FORM_DIRECTIVES, View, CORE_DIRECTIVES} from 'angular2/angula
 @View({
 	template: `
 		<h2>Commits</h2>	
-		<ul>
-			<li *ng-for="#commit of commits">
+		<ul class="list-group">
+			<li class="list-group-item" *ng-for="#commit of commits">
 				 <a [href]="commit.author.html_url"><img [src]="commit.author.avatar_url" height=40 width=40></a> <a [href]="commit.html_url">{{commit.commit.message}}</a>
 			</li>
 		</ul>

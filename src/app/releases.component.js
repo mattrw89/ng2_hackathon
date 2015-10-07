@@ -38,7 +38,7 @@ var ReleasesComponent = (function () {
     ReleasesComponent = __decorate([
         angular2_1.Component({ selector: 'releases' }),
         angular2_1.View({
-            template: "\n        <h2>Releases</h2>\n        <ul>\n            <li *ng-for=\"#release of tagsList\">\n                <a href=\"{{release.commit.url}}\"> {{release.name}}</a>\n            </li>\n        </ul>\n            \n    ",
+            template: "\n        <h2>Releases</h2>\n        <ul class=\"list-group\">\n            <li class=\"list-group-item\" *ng-for=\"#release of tagsList\">\n                <a href=\"{{release.commit.url}}\"> {{release.name}}</a>\n            </li>\n        </ul>\n            \n    ",
             directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [github_http_service_1.GithubHTTPTagsService])
