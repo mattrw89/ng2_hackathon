@@ -1,6 +1,6 @@
 import {Http} from 'angular2/http';
 import {Injectable} from 'angular2/angular2';
-import {GithubTag} from './github_tag.ts';
+import {GithubTag} from './github_tag';
 
 @Injectable()
 export class GithubHTTPTagsService {
@@ -14,10 +14,10 @@ export class GithubHTTPTagsService {
 		// });
 
 		this.tags.length = 0;
-		let promise = this._http.get('https://api.github.com/repos/angular/angular/tags?access_token=c131f0b1df3d040bf0da7aa807b81f74ecac49ba&scope=public_repo&token_type=bearer')
+		let promise = this._http.get('https://api.github.com/repos/angular/angular/tags?access_token=7a1bac753cb9b679e72e8fb91a29b16fa6bb6fe9&scope=public_repo&token_type=bearer')
 			.map((response: any) => response.json()).toPromise()
-			.then((characters: GithubTag[]) => {
-				this.tags.push(...characters);
+			.then((tags: GithubTag[]) => {
+				this.tags.push(...tags);
 				return this.tags;
 			})
 		// //TODO: fix catch
