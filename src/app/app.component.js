@@ -13,18 +13,20 @@ var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
 var characters_component_1 = require('./characters.component');
 var dashboard_component_1 = require('./dashboard.component');
+var releases_component_1 = require('./releases.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         angular2_1.Component({ selector: 'my-app' }),
         angular2_1.View({
-            template: "\n    <a [router-link]=\"['./Dashboard']\">Dashboard</a>\n    <a [router-link]=\"['./Characters']\">Characters</a>\n    <router-outlet></router-outlet>\n    ",
+            template: "\n    <a [router-link]=\"['./Dashboard']\">Dashboard</a>\n    <a [router-link]=\"['./Characters']\">Characters</a>\n    <a [router-link]=\"['./Releases']\">Releases</a>\n    <router-outlet></router-outlet>\n    ",
             directives: [router_1.ROUTER_DIRECTIVES]
         }),
         router_1.RouteConfig([
             { path: '/', as: 'Dashboard', component: dashboard_component_1.DashboardComponent },
-            { path: '/characters', as: 'Characters', component: characters_component_1.CharactersComponent }
+            { path: '/characters', as: 'Characters', component: characters_component_1.CharactersComponent },
+            { path: '/releases', as: 'Releases', component: releases_component_1.ReleasesComponent }
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
