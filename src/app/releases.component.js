@@ -14,7 +14,7 @@ var ReleasesComponent = (function () {
     function ReleasesComponent() {
         this.name = 'john';
         this.message = '';
-        this.data = [
+        this.releases = [
             {
                 "name": "starting",
                 "zipball_url": "https://api.github.com/repos/angular/angular/zipball/starting",
@@ -269,14 +269,11 @@ var ReleasesComponent = (function () {
             }
         ];
     }
-    ReleasesComponent.prototype.sayHello = function () {
-        this.message = 'Hello ' + this.name + '!';
-    };
     ReleasesComponent = __decorate([
         angular2_1.Component({ selector: 'releases' }),
         angular2_1.View({
-            template: "\n\t\t<h2>Releases</h2>\t<div>Hello {{data}}</div>\n\t\t\t\n\t",
-            directives: [angular2_1.FORM_DIRECTIVES]
+            template: "\n\t\t<h2>Releases</h2>\t\n\t\t<ul>\n\t\t\t<li *ng-for=\"#release of releases\">\n\t\t\t\t<a href=\"{{release.commit.url}}\"> {{release.name}}</a>\n\t\t\t</li>\n\t\t</ul>\n\t\t\t\n\t",
+            directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
     ], ReleasesComponent);
