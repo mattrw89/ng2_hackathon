@@ -9,15 +9,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var angular2_1 = require('angular2/angular2');
 var github_http_service_1 = require('./github.http.service');
+var angular2_1 = require('angular2/angular2');
 var ReleasesComponent = (function () {
     function ReleasesComponent(tagsService) {
         this.tagsService = tagsService;
         this.name = 'john';
         this.message = '';
         this.tagsList = [];
-        this.data = [
+        this.releases = [
             {
                 "name": "starting",
                 "zipball_url": "https://api.github.com/repos/angular/angular/zipball/starting",
@@ -287,8 +287,8 @@ var ReleasesComponent = (function () {
     ReleasesComponent = __decorate([
         angular2_1.Component({ selector: 'releases' }),
         angular2_1.View({
-            template: "\n\t\t<h2>Releases</h2>\t<div>Hello {{data}}</div>\n\t\t\t\n\t",
-            directives: [angular2_1.FORM_DIRECTIVES]
+            template: "\n\t\t<h2>Releases</h2>\t\n\t\t<ul>\n\t\t\t<li *ng-for=\"#release of releases\">\n\t\t\t\t<a href=\"{{release.commit.url}}\"> {{release.name}}</a>\n\t\t\t</li>\n\t\t</ul>\n\t\t\t\n\t",
+            directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [github_http_service_1.GithubHTTPTagsService])
     ], ReleasesComponent);

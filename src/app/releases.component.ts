@@ -1,14 +1,19 @@
-import {Component, FORM_DIRECTIVES, View} from 'angular2/angular2';
 import {GithubHTTPTagsService} from './github.http.service';
 import {GithubTag} from './github_tag';
+import {Component, FORM_DIRECTIVES, View, CORE_DIRECTIVES} from 'angular2/angular2';
 
 @Component({ selector: 'releases' })
 @View({
 	template: `
-		<h2>Releases</h2>	<div>Hello {{data}}</div>
+		<h2>Releases</h2>	
+		<ul>
+			<li *ng-for="#release of releases">
+				<a href="{{release.commit.url}}"> {{release.name}}</a>
+			</li>
+		</ul>
 			
 	`,
-	directives: [FORM_DIRECTIVES]
+	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 export class ReleasesComponent {
 	public name = 'john';
@@ -19,7 +24,7 @@ export class ReleasesComponent {
 		this.getTags();
 	}
 
-	public data = [
+	public releases = [
 {
 "name": "starting",
 "zipball_url": "https://api.github.com/repos/angular/angular/zipball/starting",
@@ -272,9 +277,8 @@ export class ReleasesComponent {
 "url": "https://api.github.com/repos/angular/angular/commits/da4862a0c82866e117ee3727f80b205c00da0710"
 }
 }
-]
+];
 	
-
 	sayHello() {
 		this.message = 'Hello ' + this.name + '!';
 	}
