@@ -1,6 +1,6 @@
 import {Http} from 'angular2/http';
 import {Injectable} from 'angular2/angular2';
-import {GithubTag} from './github_tag.ts';
+import {GithubTag} from './github_tag';
 
 @Injectable()
 export class GithubHTTPTagsService {
